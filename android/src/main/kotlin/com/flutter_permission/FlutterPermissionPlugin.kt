@@ -100,7 +100,7 @@ class FlutterPermissionPlugin : FlutterPlugin, ActivityAware, MethodCallHandler 
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-            val contentUri: Uri = FileProvider.getUriForFile(activity!!.applicationContext, "com.flutter_permission.fileprovider", apkFile)
+            val contentUri: Uri = FileProvider.getUriForFile(activity!!.applicationContext, "com.example.get_apk.fileprovider", apkFile)
             intent.setDataAndType(contentUri, "application/vnd.android.package-archive")
         } else {
             intent.setDataAndType(Uri.fromFile(apkFile), "application/vnd.android.package-archive")
